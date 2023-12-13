@@ -15,8 +15,8 @@ const App= ()=> {
         if(firstName.length === 0 || secondName.length === 0){
              setAns("Please Enter valid input");
         }
-        const f1 = firstName.toLowerCase().replace(/\s/g, '');
-        const f2 = secondName.toLowerCase().replace(/\s/g, '');
+        const f1 = firstName.toLowerCase();
+        const f2 = secondName.toLowerCase();
 
         let count = countUncommonAlphabets(f1, f2);
         
