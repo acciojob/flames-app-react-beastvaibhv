@@ -9,15 +9,17 @@ const App= ()=> {
     const handleClear = ()=>{
         setFirstName("");
         setSecondName("");
-        setAns("");
+        setAnswer("");
     }
     const handleRelationship =()=>{
-        if(firstName.length === 0 || secondName.length === 0){
-             setAns("Please Enter valid input");
-        }
         const f1 = firstName.toLowerCase();
         const f2 = secondName.toLowerCase();
 
+        if(f1.length === 0 || f2.length === 0){
+            setAnswer("Please Enter valid input");
+            
+       }
+       else{
         let count = countUncommonAlphabets(f1, f2);
         
         switch (count % 6) {
@@ -40,6 +42,7 @@ const App= ()=> {
               setAnswer("Enemy")
               
           }
+        }
           
           setFirstName("");
           setSecondName('');
