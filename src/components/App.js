@@ -15,8 +15,8 @@ const App= ()=> {
         if(firstName.length === 0 || secondName.length === 0){
              setAns("Please Enter valid input");
         }
-        const f1 = firstName.toLowerCase();
-        const f2 = secondName.toLowerCase();
+        const f1 = firstName.toLowerCase().replace(/\s/g, '');
+        const f2 = secondName.toLowerCase().replace(/\s/g, '');
 
         const count = countUncommonAlphabets(f1, f2);
         
@@ -27,19 +27,15 @@ const App= ()=> {
             case 1:
               setAnswer("Friends" )
               break;
-              
             case 2:
               setAnswer("Love")
               break;
             case 3:
               setAnswer("Affection")
-              break;
-                
+              break;  
             case 4:
               setAnswer("Marriage")
               break;
-            
-            
             default:
               setAnswer("Enemy")
               
