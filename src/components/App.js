@@ -18,23 +18,23 @@ const App= ()=> {
         const f1 = firstName.toLowerCase().replace(/\s/g, '');
         const f2 = secondName.toLowerCase().replace(/\s/g, '');
 
-        const count = countUncommonAlphabets(f1, f2);
+        let count = countUncommonAlphabets(f1, f2);
         
         switch (count % 6) {
             case 0:
-              setAnswer("Siblings")
+              setAnswer("Siblings");
               break;
             case 1:
-              setAnswer("Friends" )
+              setAnswer("Friends");
               break;
             case 2:
-              setAnswer("Love")
+              setAnswer("Love");
               break;
             case 3:
-              setAnswer("Affection")
+              setAnswer("Affection");
               break;  
             case 4:
-              setAnswer("Marriage")
+              setAnswer("Marriage");
               break;
             default:
               setAnswer("Enemy")
@@ -48,10 +48,10 @@ const App= ()=> {
     function countUncommonAlphabets(word1, word2) {
       const count = new Map();
       let totalLength = word1.length + word2.length;
-      for(let char in word1){
+      for(let char of word1){
         count.set(char, (count.get(char) || 0) + 1);
       }
-      for(let char in word2){
+      for(let char of word2){
         if(count.has(char) && count.get(char)> 0){
              count.set(char, (count.get(char) -1 ));
              totalLength -= 2;
