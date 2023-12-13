@@ -4,7 +4,7 @@ import '../styles/App.css';
 const App= ()=> {
     const[firstName, setFirstName] = useState("");
     const[secondName, setSecondName] = useState("");
-    const[ans, setAns] = useState("");
+    const[answer, setAnswer] = useState("");
 
     const handleClear = ()=>{
         setFirstName("");
@@ -22,26 +22,26 @@ const App= ()=> {
         
         switch (count % 6) {
             case 0:
-              setAns("Siblings")
+              setAnswer("Siblings")
               break;
             case 1:
-              setAns("Friends" )
+              setAnswer("Friends" )
               break;
               
             case 2:
-              setAns("Love")
+              setAnswer("Love")
               break;
             case 3:
-              setAns("Affection")
+              setAnswer("Affection")
               break;
                 
             case 4:
-              setAns("Marriage")
+              setAnswer("Marriage")
               break;
             
             
             default:
-              setAns("Enemy")
+              setAnswer("Enemy")
               
           }
           
@@ -61,10 +61,6 @@ const App= ()=> {
              totalLength -= 2;
         }
       }
-      
-      
-      
-    
       return totalLength ;
     }
 
@@ -72,12 +68,14 @@ const App= ()=> {
             <div id="main">
                 <div>
                     <input 
+                    name ="name1"
                 type="text" 
                 data-testid="input1" 
                 onChange={(e)=>{setFirstName(e.target.value)}}
                 value ={firstName}/>
 
                <input 
+               name = "name2"
                data-testid="input2" 
                type="text" 
                onChange={(e)=>{setSecondName(e.target.value)}}
@@ -94,7 +92,7 @@ const App= ()=> {
                 Clear
                 </button>
                 </div>
-               <div data-testid="answer"><h3>{ans}</h3></div>
+               <div><h3 data-testid="answer">{answer}</h3></div>
                
             </div>
         )
